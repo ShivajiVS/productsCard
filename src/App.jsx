@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "./themeProvider";
 import Counter from "./counter";
+import { Card } from "./card";
 
 export default function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -19,6 +20,8 @@ export default function App() {
         {theme === "light" ? "Dark" : "Light"}
       </button>
       <Counter />
+
+      <Card />
     </div>
   );
 }
