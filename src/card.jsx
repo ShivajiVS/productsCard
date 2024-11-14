@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useProducts } from "./useProducts";
 
-const productsUrl = "https://fakestoreapi.com/products";
-const categoriesUrl = "https://fakestoreapi.com/products/categories";
+const PRODUCTS_URL = "https://fakestoreapi.com/products";
+const CATEGORIES_URL = "https://fakestoreapi.com/products/categories";
 
 export const Card = () => {
   const { filteredProducts, categories, loading, error, filterByCategory } =
-    useProducts(productsUrl, categoriesUrl);
+    useProducts(PRODUCTS_URL, CATEGORIES_URL);
 
   const [selectedCategory, setSelectedCategory] = useState("all");
 

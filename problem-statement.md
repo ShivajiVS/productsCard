@@ -1,15 +1,26 @@
+```
 
-# Problem Statement:
+const [ data, setData] =useState([])
+const [ loading, setLoading] =useState(false)
 
-### Fetch and Display Data from an API
-##### Description: Create a React component that fetches data from an API and displays it in a cards. Use the useEffect hook to perform the fetch operation using below api
-https://fakestoreapi.com/products
+useEffect(()=>{
+  fetchData()
+  window.addEventListener("scroll", handleScroll);
+  return ()=> window.removeEventListener("scroll", handleScroll);
+},[])
 
-### Example:
+function handleScroll(){
+  if(window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+    fetchData();
+  }
+} 
 
-#### Fetch data from a sample API (e.g.).
+const fetchData= async ()=>{
+   setLoading(false)
+   const res = await fetch("url")
+   const data = await res.json()
+   setLoading(false)
+   setdata( prevState => [...preState, ...data])
+}
 
-##### Display the data in a list format.
-##### Add filter options according to category of the products Category list can be fetch from
-https://fakestoreapi.com/products/categories
-api
+```
